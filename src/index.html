@@ -13,49 +13,143 @@
     />
     <title>Projeto Tailwind</title>
     <style>
+      .bg-gradient-scratch {
+        background: linear-gradient(270deg, #d97706, #b45309),
+          url('img/arranhao.png');
+        background-size: cover, cover;
+        background-blend-mode: multiply;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: gradientShift 20s ease infinite, scratchEffect 60s linear infinite;
+      }
+
       .bg-gray-transp {
         background: rgba(33, 33, 33, 0.6);
         backdrop-filter: blur(10px);
       }
+
       .icon-large {
-        font-size: 7.5rem;
+        font-size: 4rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .icon-large:hover {
+        color: #d97706; /* Cor laranja terracota no hover */
+        transform: scale(1.2); /* Aumenta o tamanho no hover */
+      }
+
+      .text-shadow {
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      }
+
+      .hover-text-shadow:hover {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        transition: text-shadow 0.3s ease;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes scratchEffect {
+        0% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes backgroundFade {
+        0% {
+          background-image: url('arranhaduras.png');
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          background-image: url('arranhaduras.png');
+          opacity: 1;
+        }
+      }
+
+      body {
+        animation: backgroundFade 10s ease-in-out infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0.8);
+        transform-origin: center center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .img-shadow {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
       }
     </style>
   </head>
-  <body class="bg-gradient-to-t from-yellow-600 to-yellow-100">
-    <main
-      class="flex flex-col items-center justify-center min-h-screen gap-4 scale-85"
-    >
-      <p class="font-medium text-slate-200 text-xl">
+
+  <body class="bg-gradient-scratch">
+    <main class="flex flex-col items-center justify-center min-h-screen gap-4">
+      <p class="font-medium text-white text-xl text-shadow">
         Sexta-feira, 11 de agosto de 2024
       </p>
-      <p class="font-medium text-slate-200 text-8xl w-1/2 text-center">22:29</p>
-      <div
-        class="rounded-sm w-1/2"
-        style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5)"
-      >
+
+      <p class="font-medium text-white text-8xl w-3/4 text-center text-shadow mb-9">
+        22:29
+      </p>
+
+      <div class="rounded-lg w-3/4 img-shadow">
         <img
           src="https://pplware.sapo.pt/wp-content/uploads/2017/04/Logan.jpg"
           alt="Logan"
-          class="rounded-sm w-full h-auto"
+          class="rounded-lg w-full h-auto"
         />
       </div>
-      <div class="bg-gray-transp p-4 rounded-2xl w-1/2">
+
+      <div class="bg-gray-transp p-4 rounded-lg mt-2 w-3/4 hover:bg-orange-500 transition-colors duration-300">
         <div class="flex items-center justify-center mb-4"></div>
         <div class="flex flex-col items-center">
           <div class="flex items-center space-x-4">
-            <button class="text-white p-1 hover:bg-gray-500">
+            <button class="text-white p-1">
               <span class="material-icons icon-large">skip_previous</span>
             </button>
-            <button class="text-white p-2 hover:bg-gray-500">
+            <button class="text-white p-2">
               <span class="material-icons icon-large">play_arrow</span>
             </button>
-            <button class="text-white p-2 hover:bg-gray-500">
+            <button class="text-white p-2">
               <span class="material-icons icon-large">skip_next</span>
             </button>
           </div>
         </div>
       </div>
+
+      <p class="text-indigo-50 hover-text-shadow">Pressione para desbloquear</p>
     </main>
   </body>
 </html>
