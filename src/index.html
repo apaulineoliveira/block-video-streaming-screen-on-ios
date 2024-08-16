@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <title>Projeto Tailwind</title>
+    <title>Logan Project</title>
     <style>
       .bg-gradient-scratch {
         background: linear-gradient(270deg, #d97706, #b45309),
@@ -34,8 +34,8 @@
       }
 
       .icon-large:hover {
-        color: #d97706; /* Cor laranja terracota no hover */
-        transform: scale(1.2); /* Aumenta o tamanho no hover */
+        color: #d97706;
+        transform: scale(1.2);
       }
 
       .text-shadow {
@@ -116,13 +116,10 @@
 
   <body class="bg-gradient-scratch">
     <main class="flex flex-col items-center justify-center min-h-screen gap-4">
-      <p class="font-medium text-white text-xl text-shadow">
-        Sexta-feira, 11 de agosto de 2024
-      </p>
+    
+      <p id="date" class="font-medium text-white text-xl text-shadow"></p>
 
-      <p class="font-medium text-white text-8xl w-3/4 text-center text-shadow mb-9">
-        22:29
-      </p>
+      <p id="time" class="font-medium text-white text-8xl w-3/4 text-center text-shadow mb-9"></p>
 
       <div class="rounded-lg w-3/4 img-shadow">
         <img
@@ -151,5 +148,7 @@
 
       <p class="text-indigo-50 hover-text-shadow">Pressione para desbloquear</p>
     </main>
+   
+    <script src="script.js"></script>
   </body>
 </html>
