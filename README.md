@@ -7,6 +7,7 @@
 - Criar funcionalidade para os botões;
 - Criar tela de autenticação por senha;
 - Consumir api de filmes para exibir Logan;
+- Inserir mais animações
 - Criar tela de reprodução do filme (após autenticação bem sucedida)
 
   
