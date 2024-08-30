@@ -11,16 +11,26 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
     <title>Logan Project</title>
     <style>
       .bg-gradient-scratch {
         background: linear-gradient(270deg, #d97706, #b45309),
-          url('img/arranhao.png');
+          url("img/arranhao.png");
         background-size: cover, cover;
         background-blend-mode: multiply;
         background-position: center;
         background-repeat: no-repeat;
-        animation: gradientShift 20s ease infinite, scratchEffect 60s linear infinite;
+        animation: gradientShift 20s ease infinite,
+          scratchEffect 60s linear infinite;
       }
 
       .bg-gray-transp {
@@ -34,7 +44,7 @@
       }
 
       .icon-large:hover {
-        color: #d97706;
+        color: #b55705;
         transform: scale(1.2);
       }
 
@@ -85,14 +95,14 @@
 
       @keyframes backgroundFade {
         0% {
-          background-image: url('arranhaduras.png');
+          background-image: url("arranhaduras.png");
           opacity: 1;
         }
         50% {
           opacity: 0;
         }
         100% {
-          background-image: url('arranhaduras.png');
+          background-image: url("arranhaduras.png");
           opacity: 1;
         }
       }
@@ -111,44 +121,92 @@
       .img-shadow {
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
       }
+
+      .icon-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .icon-container .icon {
+        position: relative;
+        z-index: 5;
+      }
+
+      .icon-container .icon::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 2rem;
+        height: 2rem;
+        background: rgba(167, 4, 4, 0.6);
+        backdrop-filter: blur(15px);
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      .icon-container:hover .icon::after {
+        opacity: 1;
+      }
     </style>
   </head>
 
   <body class="bg-gradient-scratch">
     <main class="flex flex-col items-center justify-center min-h-screen gap-4">
-    
-      <p id="date" class="font-medium text-white text-xl text-shadow"></p>
+      
+      <div class="flex items-center mt-8 mb-2 space-x-4">
+        <div class="mt-5 icon-container">
+          <i class="w-6 h-6 mt-5 mdi mdi-camera text-indigo-50 icon"></i>
+        </div>
 
-      <p id="time" class="font-medium text-white text-8xl w-3/4 text-center text-shadow mb-9"></p>
+        <p class="mt-5 text-indigo-50 hover-text-shadow">
+          Pressione para desbloquear
+        </p>
 
-      <div class="rounded-lg w-3/4 img-shadow">
-        <img
-          src="https://pplware.sapo.pt/wp-content/uploads/2017/04/Logan.jpg"
-          alt="Logan"
-          class="rounded-lg w-full h-auto"
-        />
-      </div>
-
-      <div class="bg-gray-transp p-4 rounded-lg mt-2 w-3/4 hover:bg-orange-500 transition-colors duration-300">
-        <div class="flex items-center justify-center mb-4"></div>
-        <div class="flex flex-col items-center">
-          <div class="flex items-center space-x-4">
-            <button class="text-white p-1">
-              <span class="material-icons icon-large">skip_previous</span>
-            </button>
-            <button class="text-white p-2">
-              <span class="material-icons icon-large">play_arrow</span>
-            </button>
-            <button class="text-white p-2">
-              <span class="material-icons icon-large">skip_next</span>
-            </button>
-          </div>
+        <div class="mt-5 icon-container">
+          <i class="w-6 h-6 mdi mdi-lock text-indigo-50 icon"></i>
         </div>
       </div>
 
-      <p class="text-indigo-50 hover-text-shadow">Pressione para desbloquear</p>
+      <p id="date" class="text-xl font-medium text-white text-shadow"></p>
+      <p id="time" class="w-3/4 font-medium text-center text-white text-8xl text-shadow mb-9"
+  style="font-family: 'Orbitron', sans-serif;"
+>
+</p>
+
+
+      <div class="w-3/4 rounded-lg img-shadow">
+        <img
+          src="https://pplware.sapo.pt/wp-content/uploads/2017/04/Logan.jpg"
+          alt="Logan"
+          class="w-full h-auto rounded-lg"
+        />
+      </div>
+
+      <div
+        class="w-3/4 p-2 mt-2 mb-12 transition-colors duration-300 rounded-lg bg-gray-transp hover:bg-orange-500"
+      >
+        <div class="flex items-center justify-center mb-4"></div>
+        <div class="flex flex-col items-center">
+          <div class="flex items-center space-x-4">
+            <button class="p-1 text-white">
+              <span class="mdi mdi-skip-previous icon-large"></span>
+            </button>
+            <button class="p-2 text-white">
+              <span class="mdi mdi-play icon-large"></span>
+            </button>
+            <button class="p-2 text-white">
+              <span class="mdi mdi-skip-next icon-large"></span>
+            </button>
+          </div>
+        </div>
+      </div>      
+      </div>
     </main>
-   
+
     <script src="script.js"></script>
   </body>
 </html>
