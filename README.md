@@ -6,6 +6,7 @@
 - ~Pegar dia, data e hora do usuário via javascript;~
 - ~Inserir ícone de cadeado com mensagem para desbloquear~
 - ~Inserir ícone de câmera~
+- Remover o scroll da página
 - Criar funcionalidade de ativar câmera do computador do usuário
 - Criar funcionalidade para os botões;
 - Criar tela de autenticação por senha;
