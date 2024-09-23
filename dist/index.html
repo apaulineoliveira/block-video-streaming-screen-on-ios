@@ -81,40 +81,8 @@
         }
       }
 
-      @keyframes fadeInOut {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-
-      @keyframes backgroundFade {
-        0% {
-          background-image: url("./img/arranhao.png");
-          opacity: 1;
-        }
-        50% {
-          opacity: 0;
-        }
-        100% {
-          background-image: url("./img/arranhao.png");
-          opacity: 1;
-        }
-      }
-
       body {
         animation: backgroundFade 10s ease-in-out infinite;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: scale(0.8);
-        transform-origin: center center;
-        height: 100vh;
         margin: 0;
       }
 
@@ -152,17 +120,17 @@
         opacity: 1;
       }
     </style>
-  <script defer src="bundle.js"></script></head>
+    <script defer src="bundle.js"></script>
+  </head>
 
   <body class="bg-gradient-scratch">
-    <main class="flex flex-col items-center justify-center min-h-screen gap-4">
-      
+    <main class="flex flex-col items-center justify-center min-h-screen gap-4 p-4">
       <div class="flex items-center mt-8 mb-2 space-x-4">
         <div class="mt-5 icon-container">
           <i class="w-6 h-6 mt-5 mdi mdi-camera text-indigo-50 icon"></i>
         </div>
 
-        <p class="mt-5 text-indigo-50 hover-text-shadow">
+        <p class="mt-5 text-indigo-50 hover-text-shadow text-sm sm:text-base">
           Pressione para desbloquear
         </p>
 
@@ -171,14 +139,14 @@
         </div>
       </div>
 
-      <p id="date" class="text-xl font-medium text-white text-shadow"></p>
-      <p id="time" class="w-3/4 font-medium text-center text-white text-8xl text-shadow mb-9"
-  style="font-family: 'Orbitron', sans-serif;"
->
-</p>
+      <p id="date" class="text-lg sm:text-xl font-medium text-white text-shadow"></p>
+      <p
+        id="time"
+        class="w-full sm:w-3/4 font-medium text-center text-white text-6xl sm:text-8xl text-shadow mb-9"
+        style="font-family: 'Orbitron', sans-serif;"
+      ></p>
 
-
-      <div class="w-3/4 rounded-lg img-shadow">
+      <div class="w-full sm:w-3/4 rounded-lg img-shadow">
         <img
           src="https://pplware.sapo.pt/wp-content/uploads/2017/04/Logan.jpg"
           alt="Logan"
@@ -187,7 +155,7 @@
       </div>
 
       <div
-        class="w-3/4 p-2 mt-2 mb-12 transition-colors duration-300 rounded-lg bg-gray-transp hover:bg-orange-500"
+        class="w-full sm:w-3/4 p-2 mt-2 mb-12 transition-colors duration-300 rounded-lg bg-gray-transp hover:bg-orange-500"
       >
         <div class="flex items-center justify-center mb-4"></div>
         <div class="flex flex-col items-center">
@@ -203,7 +171,6 @@
             </button>
           </div>
         </div>
-      </div>      
       </div>
     </main>
 
