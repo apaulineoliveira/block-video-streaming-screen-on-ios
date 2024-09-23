@@ -15,7 +15,6 @@
       href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css"
       rel="stylesheet"
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -39,7 +38,7 @@
       }
 
       .icon-large {
-        font-size: 4rem;
+        font-size: 3rem; /* Diminuiu o tamanho */
         transition: color 0.3s ease, transform 0.3s ease;
       }
 
@@ -81,8 +80,38 @@
         }
       }
 
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes backgroundFade {
+        0% {
+          background-image: url("./img/arranhao.png");
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          background-image: url("./img/arranhao.png");
+          opacity: 1;
+        }
+      }
+
       body {
         animation: backgroundFade 10s ease-in-out infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
         margin: 0;
       }
 
@@ -106,8 +135,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 2rem;
-        height: 2rem;
+        width: 1.5rem; /* Diminuiu o tamanho */
+        height: 1.5rem; /* Diminuiu o tamanho */
         background: rgba(167, 4, 4, 0.6);
         backdrop-filter: blur(15px);
         border-radius: 50%;
@@ -124,29 +153,28 @@
   </head>
 
   <body class="bg-gradient-scratch">
-    <main class="flex flex-col items-center justify-center min-h-screen gap-4 p-4">
+    <main class="flex flex-col items-center justify-center min-h-screen gap-4 transform scale-75">
+      
       <div class="flex items-center mt-8 mb-2 space-x-4">
         <div class="mt-5 icon-container">
-          <i class="w-6 h-6 mt-5 mdi mdi-camera text-indigo-50 icon"></i>
+          <i class="w-4 h-4 mt-5 mdi mdi-camera text-indigo-50 icon"></i>
         </div>
 
-        <p class="mt-5 text-indigo-50 hover-text-shadow text-sm sm:text-base">
+        <p class="mt-5 text-sm text-indigo-50 hover-text-shadow">
           Pressione para desbloquear
         </p>
 
         <div class="mt-5 icon-container">
-          <i class="w-6 h-6 mdi mdi-lock text-indigo-50 icon"></i>
+          <i class="w-4 h-4 mdi mdi-lock text-indigo-50 icon"></i>
         </div>
       </div>
 
-      <p id="date" class="text-lg sm:text-xl font-medium text-white text-shadow"></p>
-      <p
-        id="time"
-        class="w-full sm:w-3/4 font-medium text-center text-white text-6xl sm:text-8xl text-shadow mb-9"
+      <p id="date" class="text-lg font-medium text-white text-shadow"></p>
+      <p id="time" class="w-3/4 font-medium text-center text-white text-6xl text-shadow mb-9"
         style="font-family: 'Orbitron', sans-serif;"
       ></p>
 
-      <div class="w-full sm:w-3/4 rounded-lg img-shadow">
+      <div class="w-3/4 rounded-lg img-shadow">
         <img
           src="https://pplware.sapo.pt/wp-content/uploads/2017/04/Logan.jpg"
           alt="Logan"
@@ -155,7 +183,7 @@
       </div>
 
       <div
-        class="w-full sm:w-3/4 p-2 mt-2 mb-12 transition-colors duration-300 rounded-lg bg-gray-transp hover:bg-orange-500"
+        class="w-3/4 p-2 mt-2 mb-12 transition-colors duration-300 rounded-lg bg-gray-transp hover:bg-orange-500"
       >
         <div class="flex items-center justify-center mb-4"></div>
         <div class="flex flex-col items-center">
@@ -163,14 +191,15 @@
             <button class="p-1 text-white">
               <span class="mdi mdi-skip-previous icon-large"></span>
             </button>
-            <button class="p-2 text-white">
+            <button class="p-1 text-white">
               <span class="mdi mdi-play icon-large"></span>
             </button>
-            <button class="p-2 text-white">
+            <button class="p-1 text-white">
               <span class="mdi mdi-skip-next icon-large"></span>
             </button>
           </div>
         </div>
+      </div>      
       </div>
     </main>
 
