@@ -6,13 +6,13 @@
 - ~Pegar dia, data e hora do usuário via javascript;~
 - ~Inserir ícone de cadeado com mensagem para desbloquear~
 - ~Inserir ícone de câmera~
-- Remover o scroll da página
+- ~Remover o scroll da página~
+- ~Deixar responsivo~
 - Criar funcionalidade de ativar câmera do computador do usuário
 - Criar funcionalidade para os botões;
 - Criar tela de autenticação por senha;
 - Consumir api de filmes para exibir o filme Logan;
-- Inserir mais animações nas telas
-- Inserir o esqueci minha senah
+- Inserir o esqueci minha senha
 - Criar tela de reprodução do filme (após autenticação bem sucedida)
 
   
