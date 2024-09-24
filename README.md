@@ -3,5 +3,6 @@
 
 <h3>https://block-video-streaming-screen-on-tailw.netlify.app/</h3>
 
+![Demonstração do vídeo](./blocked.gif)
 
   
